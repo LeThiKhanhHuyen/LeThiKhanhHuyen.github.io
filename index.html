@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kho Tài Liệu Học Tập - Lê Thị Khánh Huyền</title>
+    <title>Le Thi Khanh Huyen's Learning Hub</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -27,6 +27,8 @@
 
         .background{
             position:fixed;
+            top:0;
+            left:0;
             width:100%;
             height:100%;
             z-index:-1;
@@ -40,45 +42,46 @@
         }
 
         .circle:nth-child(1){
-            width:200px;
-            height:200px;
+            width:250px;
+            height:250px;
             top:10%;
-            left:10%;
+            left:8%;
         }
 
         .circle:nth-child(2){
-            width:150px;
-            height:150px;
+            width:180px;
+            height:180px;
             bottom:10%;
-            right:15%;
+            right:10%;
             animation-delay:2s;
         }
 
         .circle:nth-child(3){
-            width:100px;
-            height:100px;
-            top:60%;
+            width:120px;
+            height:120px;
+            top:65%;
             left:20%;
             animation-delay:4s;
         }
 
         @keyframes float{
             0%,100%{
-                transform:translateY(0);
+                transform:translateY(0px);
             }
             50%{
-                transform:translateY(-20px);
+                transform:translateY(-25px);
             }
         }
 
         .container{
             width:90%;
-            max-width:750px;
+            max-width:800px;
             background:rgba(255,255,255,0.95);
-            padding:40px;
+            backdrop-filter:blur(10px);
+            padding:45px;
             border-radius:25px;
             text-align:center;
-            box-shadow:0 15px 40px rgba(0,0,0,0.2);
+            box-shadow:0 20px 40px rgba(0,0,0,0.2);
             animation:fadeIn 1s ease;
         }
 
@@ -94,53 +97,62 @@
         }
 
         .avatar{
-            width:120px;
-            height:120px;
+            width:130px;
+            height:130px;
+            margin:0 auto 20px;
             border-radius:50%;
             background:linear-gradient(135deg,#667eea,#764ba2);
             color:white;
-            font-size:42px;
-            font-weight:bold;
             display:flex;
             justify-content:center;
             align-items:center;
-            margin:0 auto 20px;
+            font-size:42px;
+            font-weight:700;
+            box-shadow:0 10px 25px rgba(102,126,234,0.4);
         }
 
         h1{
             color:#333;
+            font-size:2.3rem;
             margin-bottom:10px;
         }
 
         h2{
             color:#667eea;
+            font-size:1.3rem;
             margin-bottom:20px;
-            font-weight:600;
         }
 
         p{
             color:#666;
             line-height:1.8;
-            margin-bottom:30px;
+            font-size:1rem;
+            margin-bottom:35px;
         }
 
         .button-group{
             display:flex;
-            flex-wrap:wrap;
             justify-content:center;
+            flex-wrap:wrap;
             gap:15px;
         }
 
         .btn{
-            padding:14px 28px;
+            display:inline-block;
+            padding:15px 30px;
             border:none;
             border-radius:50px;
             text-decoration:none;
             color:white;
             font-size:16px;
             font-weight:600;
-            transition:0.3s;
             cursor:pointer;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            transform:translateY(-4px);
+            box-shadow:0 10px 20px rgba(0,0,0,0.2);
         }
 
         .drive-btn{
@@ -151,9 +163,32 @@
             background:#ff6b6b;
         }
 
-        .btn:hover{
-            transform:translateY(-3px);
-            box-shadow:0 8px 20px rgba(0,0,0,0.2);
+        .info-section{
+            margin-top:40px;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+            gap:15px;
+        }
+
+        .card{
+            background:#f8f9ff;
+            padding:20px;
+            border-radius:15px;
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-5px);
+        }
+
+        .card h3{
+            color:#667eea;
+            margin-bottom:10px;
+        }
+
+        .card p{
+            margin:0;
+            font-size:14px;
         }
 
         .footer{
@@ -162,13 +197,18 @@
             font-size:14px;
         }
 
-        #clock{
-            margin-top:15px;
-            color:#555;
-            font-weight:600;
+        @media(max-width:600px){
+            h1{
+                font-size:1.8rem;
+            }
+
+            .container{
+                padding:30px 20px;
+            }
         }
     </style>
 </head>
+
 <body>
 
 <div class="background">
@@ -181,14 +221,15 @@
 
     <div class="avatar">KH</div>
 
-    <h1>📚 Kho Tài Liệu Học Tập</h1>
+    <h1>🎓 Learning Hub</h1>
 
-    <h2>Lê Thị Khánh Huyền</h2>
+    <h2>Le Thi Khanh Huyen</h2>
 
     <p>
-        Chào mừng bạn đến với kho tài liệu học tập.
-        Tại đây bạn có thể truy cập tài liệu, bài tập,
-        đề ôn luyện và thực hiện các bài kiểm tra trực tuyến.
+        Welcome to my personal learning portal.
+        Access study materials, practice resources,
+        assignments, and online quizzes to support
+        your learning journey.
     </p>
 
     <div class="button-group">
@@ -196,41 +237,44 @@
         <a class="btn drive-btn"
            href="https://drive.google.com/drive/u/0/folders/1JZidUs8SlAXs_eSMiaLdyR_xm2L7P5tH"
            target="_blank">
-            📁 Tài Liệu Học Tập
+            📁 Study Materials
         </a>
 
         <button class="btn quiz-btn" onclick="startQuiz()">
-            📝 Làm Bài Kiểm Tra
+            📝 Take a Quiz
         </button>
 
     </div>
 
-    <div id="clock"></div>
+    <div class="info-section">
+
+        <div class="card">
+            <h3>📚 Resources</h3>
+            <p>Study documents, exercises, and learning materials.</p>
+        </div>
+
+        <div class="card">
+            <h3>📝 Practice</h3>
+            <p>Improve your skills through quizzes and exercises.</p>
+        </div>
+
+        <div class="card">
+            <h3>🎯 Learning Goals</h3>
+            <p>Stay motivated and track your learning progress.</p>
+        </div>
+
+    </div>
 
     <div class="footer">
-        © 2026 - Lê Thị Khánh Huyền
+        © 2026 Le Thi Khanh Huyen | Learning Resources Hub
     </div>
 
 </div>
 
 <script>
-
 function startQuiz(){
-    alert("Chức năng làm bài kiểm tra sẽ được cập nhật sớm!");
+    alert("The quiz section will be available soon!");
 }
-
-function updateClock(){
-    const now = new Date();
-
-    const time = now.toLocaleTimeString("vi-VN");
-
-    document.getElementById("clock").innerHTML =
-        "⏰ Thời gian hiện tại: " + time;
-}
-
-setInterval(updateClock,1000);
-updateClock();
-
 </script>
 
 </body>
