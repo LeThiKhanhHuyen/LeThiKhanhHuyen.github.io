@@ -3,65 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kho Tài Liệu Học Tập</title>
+    <title>Kho Tài Liệu Học Tập - Lê Thị Khánh Huyền</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
         body{
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
-            padding-top: 100px;
+            font-family:'Poppins',sans-serif;
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(135deg,#667eea,#764ba2);
+            overflow:hidden;
+        }
+
+        .background{
+            position:fixed;
+            width:100%;
+            height:100%;
+            z-index:-1;
+        }
+
+        .circle{
+            position:absolute;
+            border-radius:50%;
+            background:rgba(255,255,255,0.1);
+            animation:float 8s infinite ease-in-out;
+        }
+
+        .circle:nth-child(1){
+            width:200px;
+            height:200px;
+            top:10%;
+            left:10%;
+        }
+
+        .circle:nth-child(2){
+            width:150px;
+            height:150px;
+            bottom:10%;
+            right:15%;
+            animation-delay:2s;
+        }
+
+        .circle:nth-child(3){
+            width:100px;
+            height:100px;
+            top:60%;
+            left:20%;
+            animation-delay:4s;
+        }
+
+        @keyframes float{
+            0%,100%{
+                transform:translateY(0);
+            }
+            50%{
+                transform:translateY(-20px);
+            }
         }
 
         .container{
-            background: white;
-            width: 80%;
-            max-width: 600px;
-            margin: auto;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width:90%;
+            max-width:750px;
+            background:rgba(255,255,255,0.95);
+            padding:40px;
+            border-radius:25px;
+            text-align:center;
+            box-shadow:0 15px 40px rgba(0,0,0,0.2);
+            animation:fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn{
+            from{
+                opacity:0;
+                transform:translateY(30px);
+            }
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+
+        .avatar{
+            width:120px;
+            height:120px;
+            border-radius:50%;
+            background:linear-gradient(135deg,#667eea,#764ba2);
+            color:white;
+            font-size:42px;
+            font-weight:bold;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            margin:0 auto 20px;
         }
 
         h1{
-            color: #333;
+            color:#333;
+            margin-bottom:10px;
+        }
+
+        h2{
+            color:#667eea;
+            margin-bottom:20px;
+            font-weight:600;
         }
 
         p{
-            color: #666;
+            color:#666;
+            line-height:1.8;
+            margin-bottom:30px;
+        }
+
+        .button-group{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:15px;
         }
 
         .btn{
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 24px;
-            background-color: #4285F4;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 18px;
+            padding:14px 28px;
+            border:none;
+            border-radius:50px;
+            text-decoration:none;
+            color:white;
+            font-size:16px;
+            font-weight:600;
+            transition:0.3s;
+            cursor:pointer;
+        }
+
+        .drive-btn{
+            background:#4285F4;
+        }
+
+        .quiz-btn{
+            background:#ff6b6b;
         }
 
         .btn:hover{
-            background-color: #3367D6;
+            transform:translateY(-3px);
+            box-shadow:0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .footer{
+            margin-top:30px;
+            color:#888;
+            font-size:14px;
+        }
+
+        #clock{
+            margin-top:15px;
+            color:#555;
+            font-weight:600;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Kho Tài Liệu Học Tập</h1>
+<div class="background">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+</div>
 
-        <p>
-            Nhấn nút bên dưới để truy cập thư mục Google Drive.
-        </p>
+<div class="container">
 
-        <a class="btn"
+    <div class="avatar">KH</div>
+
+    <h1>📚 Kho Tài Liệu Học Tập</h1>
+
+    <h2>Lê Thị Khánh Huyền</h2>
+
+    <p>
+        Chào mừng bạn đến với kho tài liệu học tập.
+        Tại đây bạn có thể truy cập tài liệu, bài tập,
+        đề ôn luyện và thực hiện các bài kiểm tra trực tuyến.
+    </p>
+
+    <div class="button-group">
+
+        <a class="btn drive-btn"
            href="https://drive.google.com/drive/u/0/folders/1JZidUs8SlAXs_eSMiaLdyR_xm2L7P5tH"
            target="_blank">
-            📁 Mở Google Drive
+            📁 Tài Liệu Học Tập
         </a>
+
+        <button class="btn quiz-btn" onclick="startQuiz()">
+            📝 Làm Bài Kiểm Tra
+        </button>
+
     </div>
+
+    <div id="clock"></div>
+
+    <div class="footer">
+        © 2026 - Lê Thị Khánh Huyền
+    </div>
+
+</div>
+
+<script>
+
+function startQuiz(){
+    alert("Chức năng làm bài kiểm tra sẽ được cập nhật sớm!");
+}
+
+function updateClock(){
+    const now = new Date();
+
+    const time = now.toLocaleTimeString("vi-VN");
+
+    document.getElementById("clock").innerHTML =
+        "⏰ Thời gian hiện tại: " + time;
+}
+
+setInterval(updateClock,1000);
+updateClock();
+
+</script>
 
 </body>
 </html>
