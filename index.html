@@ -1,281 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le Thi Khanh Huyen's Learning Hub</title>
+
+    <title>Learning Hub | Le Thi Khanh Huyen</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        body{
-            font-family:'Poppins',sans-serif;
-            min-height:100vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            background:linear-gradient(135deg,#667eea,#764ba2);
-            overflow:hidden;
-        }
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        .background{
-            position:fixed;
-            top:0;
-            left:0;
-            width:100%;
-            height:100%;
-            z-index:-1;
-        }
+    <link rel="stylesheet" href="style.css">
 
-        .circle{
-            position:absolute;
-            border-radius:50%;
-            background:rgba(255,255,255,0.1);
-            animation:float 8s infinite ease-in-out;
-        }
-
-        .circle:nth-child(1){
-            width:250px;
-            height:250px;
-            top:10%;
-            left:8%;
-        }
-
-        .circle:nth-child(2){
-            width:180px;
-            height:180px;
-            bottom:10%;
-            right:10%;
-            animation-delay:2s;
-        }
-
-        .circle:nth-child(3){
-            width:120px;
-            height:120px;
-            top:65%;
-            left:20%;
-            animation-delay:4s;
-        }
-
-        @keyframes float{
-            0%,100%{
-                transform:translateY(0px);
-            }
-            50%{
-                transform:translateY(-25px);
-            }
-        }
-
-        .container{
-            width:90%;
-            max-width:800px;
-            background:rgba(255,255,255,0.95);
-            backdrop-filter:blur(10px);
-            padding:45px;
-            border-radius:25px;
-            text-align:center;
-            box-shadow:0 20px 40px rgba(0,0,0,0.2);
-            animation:fadeIn 1s ease;
-        }
-
-        @keyframes fadeIn{
-            from{
-                opacity:0;
-                transform:translateY(30px);
-            }
-            to{
-                opacity:1;
-                transform:translateY(0);
-            }
-        }
-
-        .avatar{
-            width:130px;
-            height:130px;
-            margin:0 auto 20px;
-            border-radius:50%;
-            background:linear-gradient(135deg,#667eea,#764ba2);
-            color:white;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            font-size:42px;
-            font-weight:700;
-            box-shadow:0 10px 25px rgba(102,126,234,0.4);
-        }
-
-        h1{
-            color:#333;
-            font-size:2.3rem;
-            margin-bottom:10px;
-        }
-
-        h2{
-            color:#667eea;
-            font-size:1.3rem;
-            margin-bottom:20px;
-        }
-
-        p{
-            color:#666;
-            line-height:1.8;
-            font-size:1rem;
-            margin-bottom:35px;
-        }
-
-        .button-group{
-            display:flex;
-            justify-content:center;
-            flex-wrap:wrap;
-            gap:15px;
-        }
-
-        .btn{
-            display:inline-block;
-            padding:15px 30px;
-            border:none;
-            border-radius:50px;
-            text-decoration:none;
-            color:white;
-            font-size:16px;
-            font-weight:600;
-            cursor:pointer;
-            transition:0.3s;
-        }
-
-        .btn:hover{
-            transform:translateY(-4px);
-            box-shadow:0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .drive-btn{
-            background:#4285F4;
-        }
-
-        .quiz-btn{
-            background:#ff6b6b;
-        }
-
-        .info-section{
-            margin-top:40px;
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-            gap:15px;
-        }
-
-        .card{
-            background:#f8f9ff;
-            padding:20px;
-            border-radius:15px;
-            transition:0.3s;
-        }
-
-        .card:hover{
-            transform:translateY(-5px);
-        }
-
-        .card h3{
-            color:#667eea;
-            margin-bottom:10px;
-        }
-
-        .card p{
-            margin:0;
-            font-size:14px;
-        }
-
-        .footer{
-            margin-top:30px;
-            color:#888;
-            font-size:14px;
-        }
-
-        @media(max-width:600px){
-            h1{
-                font-size:1.8rem;
-            }
-
-            .container{
-                padding:30px 20px;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
+    <!-- Animated Background -->
+
 <div class="background">
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-</div>
 
-<div class="container">
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+<div class="blob blob3"></div>
+<div class="blob blob4"></div>
+<div class="blob blob5"></div>
+<div class="blob blob6"></div>
+<div class="blob blob7"></div>
+<div class="blob blob8"></div>
 
-    <div class="avatar">KH</div>
-
-    <h1>🎓 Learning Hub</h1>
-
-    <h2>Le Thi Khanh Huyen</h2>
-
-    <p>
-        Welcome to my personal learning portal.
-        Access study materials, practice resources,
-        assignments, and online quizzes to support
-        your learning journey.
-    </p>
-
-    <div class="button-group">
-
-        <a class="btn drive-btn"
-           href="https://drive.google.com/drive/folders/1JZidUs8SlAXs_eSMiaLdyR_xm2L7P5tH?usp=sharing"
-           target="_blank">
-            📁 Study Materials
-        </a>
-
-        <button class="btn quiz-btn" onclick="startQuiz()">
-            📝 Take an Exam
-        </button>
-
-    </div>
-
-    <div class="info-section">
-
-        <div class="card">
-            <h3>📚 Resources</h3>
-            <p>Study documents, exercises, and learning materials.</p>
-        </div>
-
-        <div class="card">
-            <h3>📝 Practice</h3>
-            <p>Improve your skills through quizzes and exercises.</p>
-        </div>
-
-        <div class="card">
-            <h3>🎯 Learning Goals</h3>
-            <p>Stay motivated and track your learning progress.</p>
-        </div>
-
-    </div>
-
-    <div class="footer">
-        © 2026 Le Thi Khanh Huyen | Learning Resources Hub
-    </div>
+<div class="grid"></div>
 
 </div>
 
-<script>
-function startQuiz(){
-    alert("The quiz section will be available soon!");
-}
-</script>
+    <!-- Main Card -->
+
+    <div class="container">
+
+        <h1>Learning Hub</h1>
+
+        <h2>Le Thi Khanh Huyen</h2>
+
+        <p class="description">
+
+            Welcome to your personal learning portal.
+
+            Access study materials, homework tracking and online examinations in one place.
+
+        </p>
+
+        <div class="button-group">
+
+            <a
+                href="https://drive.google.com/drive/folders/1JZidUs8SlAXs_eSMiaLdyR_xm2L7P5tH?usp=sharing"
+                target="_blank"
+                class="btn btn-blue">
+
+                📁 Study Materials
+
+            </a>
+
+            <button
+                class="btn btn-red"
+                onclick="startQuiz()">
+
+                📝 Take an Exam
+
+            </button>
+
+            <button class="btn btn-orange"
+            onclick="location.href='homework.html'">
+
+            📋 Homework Tracker
+
+            </button>
+        </div>
+
+        <div class="footer">
+
+            Made with ❤️ by Le Thi Khanh Huyen
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
