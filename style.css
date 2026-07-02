@@ -1,0 +1,370 @@
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:linear-gradient(-45deg,#fff7f6,#ffe9e6,#fff4ef,#fff9f8);
+    background-size:400% 400%;
+    animation:bgMove 18s ease infinite;
+}
+
+/* ==========================
+   BACKGROUND
+========================== */
+
+.background{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:-2;
+}
+
+.grid{
+    position:absolute;
+    inset:0;
+
+    background-image:
+    linear-gradient(rgba(255,255,255,.35) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.35) 1px,transparent 1px);
+
+    background-size:45px 45px;
+
+    opacity:.4;
+}
+
+/* Blob */
+
+.blob{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    opacity:.45;
+
+    filter:blur(18px);
+
+    animation:floatBubble 12s ease-in-out infinite;
+
+}
+
+.blob1{
+
+    width:220px;
+
+    height:220px;
+
+    background:#ff8a80;
+
+    left:5%;
+
+    bottom:-80px;
+
+}
+
+.blob2{
+
+    width:170px;
+
+    height:170px;
+
+    background:#81c784;
+
+    right:8%;
+
+    bottom:0;
+
+    animation-delay:2s;
+
+}
+
+.blob3{
+
+    width:260px;
+
+    height:260px;
+
+    background:#64b5f6;
+
+    left:40%;
+
+    bottom:-120px;
+
+    animation-delay:4s;
+
+}
+
+.blob4{
+
+    width:180px;
+
+    height:180px;
+
+    background:#ffd54f;
+
+    right:35%;
+
+    bottom:-40px;
+
+    animation-delay:6s;
+
+}
+
+@keyframes floatBubble{
+
+0%{
+
+transform:
+translateY(0)
+translateX(0)
+scale(1);
+
+}
+
+25%{
+
+transform:
+translateY(-80px)
+translateX(30px)
+scale(1.05);
+
+}
+
+50%{
+
+transform:
+translateY(-170px)
+translateX(-20px)
+scale(.95);
+
+}
+
+75%{
+
+transform:
+translateY(-80px)
+translateX(25px)
+scale(1.08);
+
+}
+
+100%{
+
+transform:
+translateY(0)
+translateX(0)
+scale(1);
+
+}
+
+}
+
+/* ==========================
+   CONTAINER
+========================== */
+
+.container{
+
+    width:92%;
+    max-width:820px;
+
+    padding:55px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.82);
+
+    backdrop-filter:blur(22px);
+
+    box-shadow:
+
+    0 25px 60px rgba(0,0,0,.08);
+
+    animation:fadeUp .8s;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+/* ==========================
+   TITLE
+========================== */
+
+h1{
+
+    font-size:3rem;
+
+    font-weight:700;
+
+    text-align:center;
+
+    color:#d32f2f;
+
+    letter-spacing:1px;
+
+    margin-bottom:8px;
+
+    text-shadow:
+    0 4px 12px rgba(211,47,47,.18);
+
+}
+
+h2{
+
+    text-align:center;
+
+    font-weight:600;
+
+    color:#444;
+
+    margin-bottom:25px;
+
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.button-group{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:18px;
+
+margin-top:40px;
+
+}
+
+.btn{
+
+    padding:16px 30px;
+
+    border-radius:60px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-weight:600;
+
+    font-size:15px;
+
+    border:none;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:
+
+    0 12px 25px rgba(0,0,0,.12);
+
+}
+
+.btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+    0 18px 35px rgba(0,0,0,.18);
+
+}
+
+.btn-blue{
+
+    background:linear-gradient(135deg,#4f8df7,#7db9ff);
+
+}
+
+.btn-red{
+
+    background:linear-gradient(135deg,#ef5350,#ff8a80);
+
+}
+
+.btn-orange{
+
+    background:linear-gradient(135deg,#fb8c00,#ffb74d);
+
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+.footer{
+
+margin-top:45px;
+
+text-align:center;
+
+color:#888;
+
+font-size:14px;
+
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+.container{
+
+padding:35px 20px;
+
+}
+
+.button-group{
+
+flex-direction:column;
+
+}
+
+.btn{
+
+width:100%;
+
+}
+
+h1{
+
+font-size:2.2rem;
+
+}
+
+}
