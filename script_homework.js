@@ -14,6 +14,16 @@ let students = [
 
 function render(){
 
+    const tbl=document.getElementById("tbl");
+
+    if(!tbl){
+
+        console.error("render(): table element '#tbl' was not found; cannot render students.");
+
+        return;
+
+    }
+
     let html="<tr>";
 
     html+="<th>HỌC VIÊN</th>";
@@ -94,7 +104,7 @@ function render(){
 
     });
 
-    document.getElementById("tbl").innerHTML=html;
+    tbl.innerHTML=html;
 
 }
 
@@ -114,6 +124,14 @@ function addStudent(){
 
 function removeStudent(index){
 
+    if(index<0 || index>=students.length){
+
+        console.error(`removeStudent(): invalid index ${index}; expected 0..${students.length-1}.`);
+
+        return;
+
+    }
+
     if(confirm("Bạn có chắc muốn xóa học viên này?")){
 
         students.splice(index,1);
@@ -127,6 +145,14 @@ function removeStudent(index){
 function showJSON(){
 
     const box=document.getElementById("json");
+
+    if(!box){
+
+        console.error("showJSON(): element '#json' was not found.");
+
+        return;
+
+    }
 
     box.style.display="block";
 

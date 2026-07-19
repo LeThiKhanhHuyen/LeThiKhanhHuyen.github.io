@@ -15,22 +15,30 @@ function startQuiz(){
 
 const card = document.querySelector(".container");
 
-document.addEventListener("mousemove",(e)=>{
+if(card){
 
-    const x = (window.innerWidth/2 - e.clientX)/40;
+    document.addEventListener("mousemove",(e)=>{
 
-    const y = (window.innerHeight/2 - e.clientY)/40;
+        const x = (window.innerWidth/2 - e.clientX)/40;
 
-    card.style.transform=
-    `rotateY(${-x}deg) rotateX(${y}deg)`;
+        const y = (window.innerHeight/2 - e.clientY)/40;
 
-});
+        card.style.transform=
+        `rotateY(${-x}deg) rotateX(${y}deg)`;
 
-document.addEventListener("mouseleave",()=>{
+    });
 
-    card.style.transform="rotateX(0deg) rotateY(0deg)";
+    document.addEventListener("mouseleave",()=>{
 
-});
+        card.style.transform="rotateX(0deg) rotateY(0deg)";
+
+    });
+
+}else{
+
+    console.error("3D card effect disabled: '.container' element was not found.");
+
+}
 
 
 // ==============================
@@ -127,14 +135,22 @@ const title=document.querySelector("h1");
 
 let t=0;
 
-setInterval(()=>{
+if(title){
 
-    t+=0.05;
+    setInterval(()=>{
 
-    title.style.transform=
-    `translateY(${Math.sin(t)*3}px)`;
+        t+=0.05;
 
-},30);
+        title.style.transform=
+        `translateY(${Math.sin(t)*3}px)`;
+
+    },30);
+
+}else{
+
+    console.error("Floating title disabled: 'h1' element was not found.");
+
+}
 
 
 
@@ -142,15 +158,19 @@ setInterval(()=>{
 // RANDOM GLOW
 // ==============================
 
-setInterval(()=>{
+if(card){
 
-    card.style.boxShadow=
+    setInterval(()=>{
 
-    `0 30px 70px rgba(0,0,0,.18),
+        card.style.boxShadow=
 
-     0 0 ${20+Math.random()*20}px rgba(229,57,53,.15)`;
+        `0 30px 70px rgba(0,0,0,.18),
 
-},1200);
+         0 0 ${20+Math.random()*20}px rgba(229,57,53,.15)`;
+
+    },1200);
+
+}
 
 
 
