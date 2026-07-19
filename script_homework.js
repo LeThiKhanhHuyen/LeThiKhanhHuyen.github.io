@@ -14,87 +14,82 @@ let students = [
 
 function render(){
 
-    let html="<tr>";
+    const table=document.getElementById("tbl");
 
-    html+="<th>HỌC VIÊN</th>";
+    table.textContent="";
+
+    const headRow=document.createElement("tr");
+
+    const nameHead=document.createElement("th");
+    nameHead.textContent="HỌC VIÊN";
+    headRow.appendChild(nameHead);
 
     for(let i=1;i<=8;i++){
 
-        html+="<th>Buổi "+i+"</th>";
+        const th=document.createElement("th");
+        th.textContent="Buổi "+i;
+        headRow.appendChild(th);
 
     }
 
-    html+="<th>Xóa</th>";
+    const delHead=document.createElement("th");
+    delHead.textContent="Xóa";
+    headRow.appendChild(delHead);
 
-    html+="</tr>";
+    table.appendChild(headRow);
 
     students.forEach((student,index)=>{
 
-        html+="<tr>";
+        const row=document.createElement("tr");
 
-        html+=`
-        <td>
-
-            <input
-            type="text"
-            value="${student.name}"
-            oninput="students[${index}].name=this.value">
-
-        </td>
-        `;
+        const nameCell=document.createElement("td");
+        const nameInput=document.createElement("input");
+        nameInput.type="text";
+        nameInput.value=student.name;
+        nameInput.addEventListener("input",function(){
+            students[index].name=this.value;
+        });
+        nameCell.appendChild(nameInput);
+        row.appendChild(nameCell);
 
         student.homework.forEach((value,lesson)=>{
 
-            html+=`
-            <td>
+            const cell=document.createElement("td");
+            const label=document.createElement("label");
 
-                <label>
+            const checkbox=document.createElement("input");
+            checkbox.type="checkbox";
+            checkbox.checked=!!value;
 
-                    <input
-                    type="checkbox"
+            const status=document.createElement("div");
+            status.className=value?"ok":"no";
+            status.textContent=value?"Đã nộp":"Chưa nộp";
 
-                    ${value?"checked":""}
+            checkbox.addEventListener("change",function(){
+                students[index].homework[lesson]=this.checked?1:0;
+                render();
+            });
 
-                    onchange="
-                    students[${index}].homework[${lesson}]
-                    =this.checked?1:0;
-
-                    render();
-                    ">
-
-                    <div class="${value?"ok":"no"}">
-
-                    ${value?"Đã nộp":"Chưa nộp"}
-
-                    </div>
-
-                </label>
-
-            </td>
-            `;
+            label.appendChild(checkbox);
+            label.appendChild(status);
+            cell.appendChild(label);
+            row.appendChild(cell);
 
         });
 
-        html+=`
-        <td>
+        const delCell=document.createElement("td");
+        const delButton=document.createElement("button");
+        delButton.className="del";
+        delButton.textContent="🗑";
+        delButton.addEventListener("click",function(){
+            removeStudent(index);
+        });
+        delCell.appendChild(delButton);
+        row.appendChild(delCell);
 
-            <button
-            class="del"
-
-            onclick="removeStudent(${index})">
-
-            🗑
-
-            </button>
-
-        </td>
-        `;
-
-        html+="</tr>";
+        table.appendChild(row);
 
     });
-
-    document.getElementById("tbl").innerHTML=html;
 
 }
 
