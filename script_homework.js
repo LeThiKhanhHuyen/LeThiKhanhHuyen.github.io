@@ -1,3 +1,11 @@
+const TOTAL_LESSONS = 8;
+
+function createEmptyHomework(){
+
+    return Array(TOTAL_LESSONS).fill(0);
+
+}
+
 let students = [
 
 {
@@ -7,7 +15,7 @@ let students = [
 
 {
     name:"Lê Trương Minh Long",
-    homework:[0,0,0,0,0,0,0,0]
+    homework:createEmptyHomework()
 }
 
 ];
@@ -18,7 +26,7 @@ function render(){
 
     html+="<th>HỌC VIÊN</th>";
 
-    for(let i=1;i<=8;i++){
+    for(let i=1;i<=TOTAL_LESSONS;i++){
 
         html+="<th>Buổi "+i+"</th>";
 
@@ -104,7 +112,7 @@ function addStudent(){
 
         name:"Học viên mới",
 
-        homework:[0,0,0,0,0,0,0,0]
+        homework:createEmptyHomework()
 
     });
 
