@@ -163,3 +163,9 @@ setInterval(()=>{
 
 
 console.log("Learning Hub Loaded Successfully!");
+
+if (typeof module !== "undefined") {
+
+    module.exports = { startQuiz };
+
+}

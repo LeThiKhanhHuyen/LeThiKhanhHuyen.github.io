@@ -134,4 +134,14 @@ function showJSON(){
 
 }
 
-render();
+// In a browser the script runs immediately; under a CommonJS test runner the
+// auto-render is skipped so tests can prepare the DOM and drive render() themselves.
+if (typeof module === "undefined") {
+
+    render();
+
+} else {
+
+    module.exports = { students, render, addStudent, removeStudent, showJSON };
+
+}
