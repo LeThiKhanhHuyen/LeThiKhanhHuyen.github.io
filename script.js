@@ -10,49 +10,40 @@ function startQuiz(){
 
 
 // ==============================
-// 3D CARD EFFECT
+// 3D CARD EFFECT + BLOB PARALLAX
 // ==============================
 
 const card = document.querySelector(".container");
-
-document.addEventListener("mousemove",(e)=>{
-
-    const x = (window.innerWidth/2 - e.clientX)/40;
-
-    const y = (window.innerHeight/2 - e.clientY)/40;
-
-    card.style.transform=
-    `rotateY(${-x}deg) rotateX(${y}deg)`;
-
-});
-
-document.addEventListener("mouseleave",()=>{
-
-    card.style.transform="rotateX(0deg) rotateY(0deg)";
-
-});
-
-
-// ==============================
-// BLOB PARALLAX
-// ==============================
 
 const blobs=document.querySelectorAll(".blob");
 
 document.addEventListener("mousemove",(e)=>{
 
-    const x=e.clientX/window.innerWidth;
+    const cardX = (window.innerWidth/2 - e.clientX)/40;
 
-    const y=e.clientY/window.innerHeight;
+    const cardY = (window.innerHeight/2 - e.clientY)/40;
+
+    card.style.transform=
+    `rotateY(${-cardX}deg) rotateX(${cardY}deg)`;
+
+    const blobX=e.clientX/window.innerWidth;
+
+    const blobY=e.clientY/window.innerHeight;
 
     blobs.forEach((blob,index)=>{
 
         const speed=(index+1)*12;
 
         blob.style.transform=
-        `translate(${x*speed}px,${y*speed}px)`;
+        `translate(${blobX*speed}px,${blobY*speed}px)`;
 
     });
+
+});
+
+document.addEventListener("mouseleave",()=>{
+
+    card.style.transform="rotateX(0deg) rotateY(0deg)";
 
 });
 

@@ -1,0 +1,14 @@
+/* ==========================
+   SHARED RESET
+   Common base styles shared across every page.
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.footer{
+    text-align:center;
+}
