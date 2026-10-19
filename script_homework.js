@@ -19,10 +19,10 @@ function render(){
     html+="<th>HỌC VIÊN</th>";
 
     for(let i=1;i<=8;i++){
-
+    if(i !== 5){
         html+="<th>Buổi "+i+"</th>";
-
     }
+}
 
     html+="<th>Xóa</th>";
 
@@ -45,36 +45,29 @@ function render(){
 
         student.homework.forEach((value,lesson)=>{
 
-            html+=`
+    if(lesson !== 4){
+        html+=`
             <td>
-
                 <label>
-
                     <input
-                    type="checkbox"
+                        type="checkbox"
+                        ${value ? "checked" : ""}
+                        onchange="
+                            students[${index}].homework[${lesson}]
+                            = this.checked ? 1 : 0;
+                            render();
+                        "
+                    >
 
-                    ${value?"checked":""}
-
-                    onchange="
-                    students[${index}].homework[${lesson}]
-                    =this.checked?1:0;
-
-                    render();
-                    ">
-
-                    <div class="${value?"ok":"no"}">
-
-                    ${value?"Đã nộp":"Chưa nộp"}
-
+                    <div class="${value ? "ok" : "no"}">
+                        ${value ? "Đã nộp" : "Chưa nộp"}
                     </div>
-
                 </label>
-
             </td>
-            `;
+        `;
+    }
 
-        });
-
+});
         html+=`
         <td>
 
